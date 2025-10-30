@@ -47,7 +47,7 @@ G, D = gan_models["generator"].to(device), gan_models["discriminator"].to(device
 
 
 # ------------------------------
-# 路由 1: 首页
+# 1: First page
 # ------------------------------
 @app.get("/")
 def home():
@@ -55,7 +55,7 @@ def home():
 
 
 # ------------------------------
-# 路由 2: CNN 预测接口
+# 2: CNN 
 # ------------------------------
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
@@ -81,7 +81,7 @@ async def predict(file: UploadFile = File(...)):
 
 
 # ------------------------------
-# 路由 3: GAN 训练接口
+# 3: GAN training
 # ------------------------------
 from torchvision import datasets, transforms
 
@@ -103,7 +103,7 @@ def train_gan_endpoint(epochs: int = 3):
 
 
 # ------------------------------
-# 路由 4: GAN 生成接口
+# 4: GAN generating
 # ------------------------------
 from fastapi.responses import FileResponse
 
