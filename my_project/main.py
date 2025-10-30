@@ -91,7 +91,7 @@ def train_gan_endpoint(epochs: int = 3):
 
     transform = transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize((0.5,), (0.5,))  # 单通道MNIST标准化
+        transforms.Normalize((0.5,), (0.5,)) 
     ])
     mnist_data = datasets.MNIST(root="./data", train=True, download=True, transform=transform)
     train_loader = torch.utils.data.DataLoader(mnist_data, batch_size=64, shuffle=True)
